@@ -27,7 +27,7 @@ SECRET_KEY = env("SECRET_KEY", default="replace-me")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG", default=False)
 
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["*"])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
 
 
 # Application definition
@@ -129,10 +129,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-TELEGRAM_BOT_TOKEN = config.bot.TOKEN
-WEBHOOK_URL = f"{config.webhook.HOST}/{TELEGRAM_BOT_TOKEN}/"
-
 
 LOGGING = {
     "version": 1,
