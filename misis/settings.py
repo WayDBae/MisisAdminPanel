@@ -28,6 +28,9 @@ SECRET_KEY = env("SECRET_KEY", default="replace-me")
 DEBUG = env("DEBUG", default=False)
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
+CSRF_TRUSTED_ORIGINS = [
+    'https://misisadminpanel.onrender.com',  # Добавьте ваш домен
+]
 
 
 # Application definition
