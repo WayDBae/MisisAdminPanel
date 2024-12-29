@@ -1,0 +1,12 @@
+APScheduler
+colorama
+colorlog
+Django
+django-apscheduler
+django-environ
+django-grappelli
+inflection
+peewee
+psycopg2
+pyTelegramBotAPI
+python-dotenv
