@@ -150,28 +150,28 @@ LOGGING = {
             "class": "logging.StreamHandler",
             "formatter": "colored",
         },
-        "file": {
-            "level": config.logger.LEVEL,  # Устанавливаем минимальный уровень логирования
-            "class": "logging.FileHandler",
-            "filename": config.logger.PATH,
-            "formatter": "verbose",
-        },
+        # "file": {
+        #     "level": config.logger.LEVEL,  # Устанавливаем минимальный уровень логирования
+        #     "class": "logging.FileHandler",
+        #     "filename": config.logger.PATH,
+        #     "formatter": "verbose",
+        # },
     },
-    "loggers": {
-        "django": {
-            "handlers": ["console", "file"],
-            "level": config.logger.LEVEL,  # Устанавливаем минимальный уровень логирования
-            "propagate": True,
-        },
-        "django.request": {
-            "handlers": ["file"],
-            "level": "ERROR",  # Для ошибок в запросах можем использовать более высокий уровень
-            "propagate": False,
-        },
-        "django.db.backends": {
-            "handlers": ["file"],
-            "level": "DEBUG",  # Для запросов к базе данных можно оставить DEBUG
-            "propagate": False,
-        },
-    },
+    # "loggers": {
+    #     "django": {
+    #         "handlers": ["console", "file"],
+    #         "level": config.logger.LEVEL,  # Устанавливаем минимальный уровень логирования
+    #         "propagate": True,
+    #     },
+    #     "django.request": {
+    #         "handlers": ["file"],
+    #         "level": "ERROR",  # Для ошибок в запросах можем использовать более высокий уровень
+    #         "propagate": False,
+    #     },
+    #     "django.db.backends": {
+    #         "handlers": ["file"],
+    #         "level": "DEBUG",  # Для запросов к базе данных можно оставить DEBUG
+    #         "propagate": False,
+    #     },
+    # },
 }
