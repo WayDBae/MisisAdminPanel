@@ -6,18 +6,6 @@ from telebot import TeleBot
 env = environ.Env()
 environ.Env.read_env(".env")
 
-
-class Webhook:
-    def __init__(self):
-        self.HOST = env("WEBHOOK_HOST")
-        self.PORT = env.int("WEBHOOK_PORT", 443)
-        self.LISTEN = env("WEBHOOK_LISTEN", default="0.0.0.0")
-        self.MODE = env("MODE", default="dev")
-
-    def __str__(self):
-        return f"Webhook(host={self.HOST}, port={self.PORT}, listen={self.LISTEN}, mode={self.MODE})"
-
-
 class PostgreSQL:
     def __init__(self):
         self.NAME = env("DB_NAME")
@@ -56,7 +44,6 @@ class Logger:
 class Config:
     def __init__(self):
         # Инициализация отдельных конфигураций
-        self.webhook = Webhook()
         self.database = PostgreSQL()
         self.logger = Logger()
 
