@@ -1,17 +1,20 @@
 import traceback
 from django.http import JsonResponse
+from django.http import HttpResponse
+from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from bot.config.bot_config import Config
 
 config = Config()
 
 
+@require_http_methods(["GET", "POST"])
 @csrf_exempt
 def index(request):
-    try:
-        return JsonResponse({"message": "САЛАМАЛЕКСУС!"})
-    except Exception as e:
-        return JsonResponse({"error": str(e)}, status=500)
+    if request.method == "GET" or request.method == "POST":
+        return HttpResponse("САЛАМАЛЕКСУС!")
+    else:
+        return JsonResponse({"error": "Такой метод не приветствуется"}, status=500)
 
 
 # @csrf_exempt
