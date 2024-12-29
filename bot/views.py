@@ -11,10 +11,7 @@ config = Config()
 @require_http_methods(["GET", "POST"])
 @csrf_exempt
 def index(request):
-    if request.method == "GET" or request.method == "POST":
-        return HttpResponse("САЛАМАЛЕКСУС!")
-    else:
-        return JsonResponse({"error": "Такой метод не приветствуется"}, status=500)
+        return HttpResponse("САЛАМАЛЕКСУС! Добро пожаловать в Админ-панель Расписаний МИСиС!")
 
 
 # @csrf_exempt
